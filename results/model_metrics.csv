@@ -1,0 +1,2 @@
+model_key,model_name,model_path,MAE_stocks,RMSE_stocks,R2_stocks
+random_forest_stocks,Random Forest Regressor,C:\Data projet\ml-poc-project\models\model_stocks_rf.pkl,1.7164543007797795,3.0081242125011585,0.761729114243205

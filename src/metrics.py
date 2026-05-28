@@ -7,22 +7,23 @@ that matter for their project.
 from __future__ import annotations
 
 from typing import Any
+import numpy as np
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 def compute_metrics(y_true: Any, y_pred: Any) -> dict[str, float]:
     """Return the metrics used to compare model performance.
 
     Expected return value:
-        A dictionary mapping metric names to numeric values, for example:
-        ``{"accuracy": 0.91, "f1": 0.88}``.
-
-    Constraints:
-    - Every value must be numeric and convertible to ``float``.
-    - Use the same metric set for every model so results remain comparable.
-    - Keep metric names stable because they are written to
-      ``results/model_metrics.csv``.
+        A dictionary mapping metric names to numeric values.
     """
-
-    raise NotImplementedError(
-        "Implement metrics.compute_metrics() before running scripts/main.py."
-    )
+    mae = mean_absolute_error(y_true, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+    r2 = r2_score(y_true, y_pred)
+    
+    return {
+        "MAE_stocks": float(mae),
+        "RMSE_stocks": float(rmse),
+        "R2_stocks": float(r2)
+    }
+    

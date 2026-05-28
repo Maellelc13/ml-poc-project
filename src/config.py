@@ -30,12 +30,11 @@ MODEL_METRICS_FILE = RESULTS_DIR / "model_metrics.csv"
 STREAMLIT_HOST = "localhost"
 STREAMLIT_PORT = 8501
 
-# Students must replace this example with their trained models.
-# Each entry must point to a serialized model saved as `.joblib`, `.pkl`, or `.pickle`.
+# Vos modèles entraînés viennent remplacer le modèle d'exemple ci-dessous :
 MODELS = {
-    "model_a": {
-        "name": "Model A",
-        "description": "A simple baseline model.",
-        "path": MODELS_DIR / "model_a.pkl",
-    },
+    "random_forest_stocks": {
+        "name": "Random Forest Regressor",
+        "description": "Modèle d'ensemble optimisé pour la prévision des stocks hebdomadaires.",
+        "path": MODELS_DIR / "model_stocks_rf.pkl",
+    }
 }
